@@ -1,0 +1,30 @@
+# List of Services relevant for the ACNO operations.
+#
+# The "services.sh" utilizes the data to
+# - check the services status
+# - start one or more services (*
+# - stop one or more services (*
+#
+# Especially for the start and stop operation it is important to note
+# - allowed only for those services with a "yes" in the second column
+# - the first column defines the order in which the services are started/stopped
+#
+# For more information take a look into the scripts.
+#
+# nr allowed unit load active sub
+01 no ssh			loaded active running
+02 no openvpn-server@server	loaded active running
+03 no openvpn			loaded active exited
+04 no lighttpd			loaded active running
+11 yes apache2			loaded active running
+12 yes php8.2-fpm		loaded active running
+21 yes notify_push		loaded active running
+31 yes coturn			loaded active running
+41 yes nginx			loaded active running
+42 yes ds-converter		loaded active running
+43 yes ds-metrics		loaded active running
+44 yes ds-docservice		loaded active running
+71 yes rabbitmq-server		loaded active running
+81 yes redis-server		loaded active running
+91 yes postgresql@15-main	loaded active running
+92 yes postgresql		loaded active exited

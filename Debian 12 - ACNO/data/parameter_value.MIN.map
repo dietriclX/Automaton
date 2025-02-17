@@ -1,0 +1,118 @@
+# 
+# Workstation for setup and administration
+#
+
+# Name of the system 
+wshostws        my-workstation
+
+# Regular OS-User account
+wssysuserws     your-normal-account-on-your-workstation
+
+
+
+#
+# general Installation Information
+#
+
+# Email-Address for 3rd parties e.g. used for Let's Encrypt
+aoowner@addressao       owner@example.com
+
+
+
+#
+# Location
+#
+
+# Country Code - ISO 3166-1 alpha-2
+# e.g. "DE" for Germany
+aophoneregionao         your-two-character-country-code
+
+# Time Zone - PHP - https://www.php.net/manual/en/timezones.php
+# e.g. "Europe/Berlin" for Germany
+aotimezoneao            your-time-zone-as-listed-on-the-PHP-page
+
+
+
+#
+# Internet
+#
+
+# Domain Name
+# As used in the URL "https://aodomainao" to access the Nextcloud server/service
+# e.g. "example.com" as used in documentations
+aodomainao	your-domain-name
+
+
+
+#
+# Infrastructure
+#
+
+# Router which connects the internet with the ACMOO server.
+aorouteraddressao	your-internal-router-addess
+
+
+
+#
+# Machine specific
+#
+
+# Interface name LAN - connection to the intranet
+aohostlanao     your-machine-lan-interface
+
+# Name of the system (add "1" at the end of the host name) 
+aohostao        your-machine-host-name
+
+# Domain name of the DMZ
+aodmzdomainao		your-machine-host-domain
+
+# Account: root
+aosystem@addressao	your-root-email-address
+
+# Account: regular system user
+aosysuserao		your-normal-account-on-the-machine
+
+
+
+#
+# PostgreSQL DBSM
+#
+# At the moment only "localhost" is supported by instructions/scripts
+#
+
+# the DBSM administrator password
+psadmpasswordps		your-administrator-password
+
+
+
+#
+# coturn
+#
+
+# PostgreSQL DBMS & DB settings
+ctdbopasswordct		your-dbo-password-for-coturn-database
+
+# as for "static-auth-secret" in coturn configuration
+ctsecretct              your-coturn-secret
+
+
+
+#
+# Nextcloud
+#
+
+# PostgreSQL DBMS & DB settings
+ncdbopasswordnc		your-dbo-password-for-Nextcloud-database
+
+# administrator
+ncadminpasswordnc	your-Nextcloud-Administrator-password
+ncadmin@addressnc	your-Nextcloud-Administrator-email-address
+
+
+
+#
+# ONLYOFFICE
+#
+
+# PostgreSQL DBMS & DB settings
+oodbopasswordoo		your-dbo-password-for-ONLYOFFICE-database

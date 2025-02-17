@@ -1,0 +1,16 @@
+01,no,ssh,loaded,active,running
+11,yes,apache2,loaded,active,running
+12,yes,php8.2-fpm,loaded,active,running
+21,yes,notify_push,loaded,active,running
+31,yes,coturn,loaded,active,running
+41,yes,nginx,loaded,active,running
+42,yes,ds-converter,loaded,active,running
+43,yes,ds-metrics,loaded,active,running
+44,yes,ds-docservice,loaded,active,running
+71,yes,rabbitmq-server,loaded,active,running
+81,yes,redis-server,loaded,active,running
+91,yes,postgresql@15-main,loaded,active,running
+92,yes,postgresql,loaded,active,exited
+02,no,openvpn-server@server,loaded,active,running
+03,no,openvpn,loaded,active,exited
+04,no,lighttpd,loaded,active,running

@@ -1,0 +1,319 @@
+#
+# Restore Settings
+#
+
+# Restore on a freshly setup machine?
+# yes - only the basis had been installed
+#  no - restore on existing ACNO machine, with all required software
+aorestorenewmachineao	-
+
+
+
+# 
+# Workstation for setup and administration
+#
+
+# Name of the system 
+wshostws        workstation
+
+# Regular OS-User account
+wssysuserws	user_os
+
+
+
+#
+# generall Installation Information
+#
+
+# Installation Name, which describes the best the whole installation
+aonameao		ACNO
+
+# Email-Address for 3rd parties e.g. used for Let's Encrypt
+aoadmin@addressao	external@example.com
+
+
+
+#
+# Location
+#
+
+# Country Code - ISO 3166-1 alpha-2
+# e.g. "DE" for Germany
+aophoneregionao		US
+
+# Time Zone - PHP - https://www.php.net/manual/en/timezones.php
+# e.g. "Europe/Berlin" for Germany
+aotimezoneao		America/New_York
+
+# Locals - PostgreSQL databases
+aodblocalesao		en_US.UTF-8
+
+
+
+#
+# Certicate related information
+#
+
+# own Certificate Authrority (CA)
+#
+# Country as used in the certificate
+cacountryca     US
+# State/Province/County as used in the certificate
+castateca       MA
+# Locality as used in the certificate
+cacityca        Wakefield
+# Organisation as used in the certificate
+caorgca         'not W3C'
+# Organisational Unit as used in the certificate
+caorgunitca     'just someone else'
+# Common Name as used in the certificate
+cacommonnameca  'Example CA'
+# short name as used in file names
+canameca        example_ca
+
+# own Certificate Unit, which requests certificates and use it to run the server(s)
+#
+# Country as used in the certificate
+cucountrycu     US
+# State/Province/County as used in the certificate
+custatecu       MA
+# Locality as used in the certificate
+cucitycu        Wakefield
+# Organisation as used in the certificate
+cuorgcu         'not W3C'
+# Organisational Unit as used in the certificate
+cuorgunitcu     'just someone else, hosting ACNO services'
+
+
+
+#
+# Internet
+#
+
+# Domain Name
+# As used in the URL "https://aodomainao" to access the Nextcloud server/service
+# e.g. "example.com" as used in documentations
+aodomainao	example.com
+aodomain2ao     example.org
+
+# Internet Server Name
+# As used in the URL "https://ctserverct.aodomainao" to access the ONLYOFFICE server/service
+ctserverct	coturn_srv
+
+# Internet Server Name
+# As used in the URL "https://ooserveroo.aodomainao" to access the cotun server/service
+ooserveroo	onlyoffice_srv
+
+# In case of using GeoBlock, an MaxMind account is required.
+# Specify Account ID and License Key of your MaxMind account
+aomaxmindaccountao	aomaxmindaccountao
+aomaxmindlicenseao	aomaxmindlicenseao
+
+# WebDav Server for Backups
+# 
+wdfqdnwd		webdav.example.com
+wdurlwd			https://webdav.example.com/remote.php/webdav
+wduserwd		webdav_user
+wduserpasswordwd	webdav_password
+
+# directory for backup on WebDAV server (no "/" at the beginning)
+wdbackupdirwd		backup/acno
+
+
+
+#
+# Infrastructure
+#
+
+# Router which connects the internet with the ACMOO server.
+aorouteraddressao	192.168.1.1
+
+
+
+#
+# Backup Unit (unitb)
+#
+aoclientvpnprimaryconfao        primary
+aoclientvpnbackupconfao         backup
+aounitbmountdirdeviceao         /mnt/backup
+aounitbsysuserao                user_os
+
+
+
+#
+# Machine specific
+#
+
+# Interface name LAN - connection to the intranet
+aohostlanao	eth0
+
+# Name of the system (add "1" at the end of the host name)
+aohostao	acno_host_name
+
+# Name of the stand-by system (add "2" at the end of the host name)
+aohost2ao	acno_standby_host_name
+
+# Domain name of the system
+aodmzdomainao	local
+
+# Backup: Directory aka Mount Point
+aomountdirdeviceao	/mnt/backup
+
+# Backup WebDAV: Directory aka Mount Point
+aomountdirwebdavdirao	/mnt/webdav
+
+# Account: root
+aosystem@addressao	root@example.com
+
+# Account: regular system user
+aosysuserao	user_os
+
+
+
+#
+# PostgreSQL DBSM
+#
+# At the moment only "localhost" is supported by instructions/scripts
+#
+
+# either default "localhost", or machine name as reachable from ACNO server
+pshostps	localhost
+
+# port of the PostgreSQL server listining on
+psportps	5432
+
+# Unix socket
+pssocketps	/var/run/postgresql
+
+# the DBSM administrator, default is "postgres"
+psadmps		postgres
+
+# the DBSM administrator password
+psadmpasswordps		password123
+
+
+
+#
+# coturn
+#
+
+# either default "localhost", or machine name on which coturn is running
+cthostct		localhost
+
+# PostgreSQL DBMS & DB settings
+ctdbhostct		localhost
+ctdbportct		5432
+ctdboct			coturn
+ctdbopasswordct		password123
+ctdatabasect		coturn
+
+# as for "static-auth-secret" in coturn configuration
+ctsecretct		north
+
+
+
+#
+# Nextcloud
+#
+
+# either default "localhost", or machine name on which Nextcloud is running
+nchostnc		localhost
+
+# /var/lib directory
+nclibdirectorync	/var/lib/nextcloud
+
+# WWW directory
+ncwebdirectorync	/var/www/ncdirectorync
+
+# data directory
+ncdatadirectorync	/var/lib/nextcloud/data
+
+# PostgreSQL DBMS & DB settings
+ncdbhostnc		localhost
+ncdbportnc		5432
+# to be "/var/run/postgresql" if NEXTCLOUD_DB_HOST = localhost, else empty
+ncdbsocketnc		/var/run/postgresql
+ncdbonc			nextcloud
+ncdbopasswordnc		password123
+ncdatabasenc		nextcloud
+
+# Redis in-memory storage system settings
+ncredisdbindexnc	0
+
+# administrator
+ncadminnc		administrator
+ncadminnc		ncadminnc
+ncadminpasswordnc	password123
+ncadmin@addressnc	administrator@example.com
+
+# Subject for Administrator email notification
+ncadminsubjectprio1nc	"ERROR: Prio 1"
+ncadminsubjectprio2nc	"ERROR: Prio 2"
+ncadminsubjectprio3nc	"ERROR: Prio 3"
+ncadminsubjectinfonc	"Notification"
+
+
+
+#
+# ONLYOFFICE
+#
+
+# Secret Key as defined in default.json
+oosecretkeyoo		'<as specified in default.json>'
+
+# either default "localhost", or machine name on which ONLYOFFICE is running
+oohostoo		localhost
+
+# WWW directory
+oowebdirectoryoo	/var/www/onlyoffice
+
+# /var/lib directory
+oolibdirectoryoo	/var/lib/onlyoffice
+
+# PostgreSQL DBMS & DB settings
+oodbhostoo		localhost
+oodbportoo		5432
+# to be "/var/run/postgresql" if ONLYOFFICE_DB_HOST = localhost, else empty
+oodbsocketoo		/var/run/postgresql
+oodbooo			onlyoffice
+oodbopasswordoo		password123
+oodatabaseoo		onlyoffice
+
+
+
+#
+# Add-On
+#
+
+# Set it to "true" once you have configured the root account to send emails  (default is "false")
+aorootemailsendao		false
+
+# Set it to "true" once you have configured the root account to send encrypted emails  (default is "false")
+aoroortemailencryptionsao	false
+
+# Set it to "true" once you have installed GeoBlocker (default is "false")
+# Sources are: "MaxMind" (geoipupdate)
+aogeoblockerao		false
+aogeoblockersourceao	MaxMind
+
+# Set it to "true" once you have installed OpenVPN (default is "false")
+aoopenvpnao		false
+
+# Set it to "true" once you are using Let's Encrypt (default is "false")
+aoletsencryptao		false
+
+# Set it to "true" once you are using Lighttp to serve HTTP Error 503 during maintenance (default is "false")
+aolighttp503ao		false
+
+# Set it to "true if using HDD - idle => power off
+aohdparmao              false
+aohdparmminutesao	15
+
+# Set it to "true if S.M.A.R.T. is in use
+aosmartao		false
+
+# Set it to "true" once you are using Backup by Remote Client (default is "false")
+aoremotebackupao	false
+
+# Set it to "true" once you are using Backup to WebDAV (default is "false")
+aowebdavbackupao	false
